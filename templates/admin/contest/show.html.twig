@@ -1,0 +1,68 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Contest{% endblock %}
+
+{% block h %}Contest{% endblock %}
+{% block body %}
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ contest.id }}</td>
+            </tr>
+            <tr>
+                <th>Date du début</th>
+                <td>{{ contest.startDate ? contest.startDate|date('d/m/Y') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Vainqueur</th>                
+                <td>{{ contest.winner ? contest.winner.nickname : "non désigné" }}</td>
+                {# // Requête qui retourne les joueurs de la partie n°1
+                SELECT p.*
+                FROM contest c 
+                    JOIN contest_player cp ON c.id = cp.contest_id
+                    JOIN player p ON p.id = cp.player_id
+                WHERE c.id = 1 #}
+
+            </tr>
+
+            <tr>
+                <th>Joueurs</th>
+                <td>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Email</th>
+                                <th>Nickname</th>
+                                <th>Fiche joueur</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        {% for player in contest.players %}
+                        
+                            <tr>
+                                <td>{{ player.id }}</td>
+                                <td>{{ player.email }}</td>
+                                <td>{{ player.nickname }}</td>
+                                <td><a href="{{ path('app_admin_player_show', {'id': player.id}) }}">show</a></td>
+                              
+                            </tr>
+                        {% else %}
+                            <tr>
+                                <td colspan="4">no records found</td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_admin_contest_index') }}">back to list</a>
+
+    <a href="{{ path('app_admin_contest_edit', {'id': contest.id}) }}">edit</a>
+
+    {{ include('admin/contest/_delete_form.html.twig') }}
+{% endblock %}

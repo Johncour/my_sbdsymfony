@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div>
+
+{#
+    L'opérateur de concaténation est ~
+    Le point . sert à accéder aux indices d'un tableau ou au propriété d'un objet
+#}
+    <h2> Je m'appelle {{ personne.prenom ~ ' ' ~ personne.nom }}, et j'ai {{ personne.age }} ans</h2>
+</div>
+{% endblock %}

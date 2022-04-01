@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Recherche{% endblock %}
+
+{% block h %}Résultats de la recherche de : <code> {{mot }}</code>{% endblock %}
+{% block body %}
+    
+
+    <div class="card-columns">
+        {% for game in games %}
+            {{ include("game/_card.html.twig") }}
+        {% else %}
+            <mark>Aucun résultat trouvé</mark>
+        {% endfor %}
+    </div>
+
+{% endblock %}
+
+{% block piedpage %}
+    <p>footer de la page d'accueil</p>
+{% endblock %}

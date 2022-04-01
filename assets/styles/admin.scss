@@ -1,0 +1,9 @@
+$primary: rgb(255, 0, 140);
+$danger: rgb(255, 187, 0);
+$dark: rgb(0, 132, 255);
+
+@import "~@fortawesome/fontawesome-free/css/all.min.css";
+@import "~bootstrap/scss/bootstrap";
+body {
+    background-color: lightgray;
+}

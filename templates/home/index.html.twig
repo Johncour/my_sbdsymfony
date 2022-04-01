@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello HomeController!{% endblock %}
+
+{% block body %}
+  <h2>Page d'accueil</h2>
+
+  <div class="card-columns">
+    {% for game in games %}
+      {{ include( "game/_card.html.twig") }}
+    {% endfor %}
+  </div>
+
+<div>
+    <h5>Il y a {{ players }} joueurs inscrits</h5>
+</div>
+
+<hr>
+<div>
+  <h2>Joueurs ayant déjà gagné une partie :</h2>
+    <ul>
+    {% for win in winner %}
+      <li>{{ win.nickname ~ " (" ~ win.email ~ ") " }}</li>
+    {% endfor %}
+    </ul>
+  </div>
+
+{% endblock %}
+
+{% block piedpage %}
+    <p>footer de la page d'accueil</p>
+{% endblock %}

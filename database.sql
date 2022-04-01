@@ -1603,10 +1603,98 @@ Changes to be committed:
         new file:   webpack.config.js
         new file:   yarn.lock
 
+John@LAPTOP-VF52JB84 MINGW64 /c/xampp/htdocs/my_sbd (main)
+$ git status
+On branch main
+nothing to commit, working tree clean
+
+John@LAPTOP-VF52JB84 MINGW64 /c/xampp/htdocs/my_sbd (main)
+$ git add .
+
+John@LAPTOP-VF52JB84 MINGW64 /c/xampp/htdocs/my_sbd (main)
+$ git status
+On branch main
 Changes not staged for commit:
   (use "git add <file>..." to update what will be committed)
   (use "git restore <file>..." to discard changes in working directory)
         modified:   database.sql
+        modified:   info.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+John@LAPTOP-VF52JB84 MINGW64 /c/xampp/htdocs/my_sbd (main)
+$ git add database.sql
+
+John@LAPTOP-VF52JB84 MINGW64 /c/xampp/htdocs/my_sbd (main)
+$ git status
+On branch main
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   database.sql
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   info.txt
+
+
+John@LAPTOP-VF52JB84 MINGW64 /c/xampp/htdocs/my_sbd (main)
+$ git commit -m "modifier le fichier database"
+[main de3a3b2] modifier le fichier database
+ 1 file changed, 87 insertions(+), 4 deletions(-)
+
+John@LAPTOP-VF52JB84 MINGW64 /c/xampp/htdocs/my_sbd (main)
+$ git status
+On branch main
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   info.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+John@LAPTOP-VF52JB84 MINGW64 /c/xampp/htdocs/my_sbd (main)
+$ git log
+commit de3a3b2bac8159e6f1400fb841a7573ac4a152b9 (HEAD -> main)
+Author: Johncour <courpronjonathan@googlemail.com>
+Date:   Fri Apr 1 12:00:09 2022 +0200
+
+    modifier le fichier database
+
+commit 2da4ba5a399982a93b8c38da93a8020fc5366946
+Author: Johncour <courpronjonathan@googlemail.com>
+Date:   Fri Apr 1 11:49:39 2022 +0200
+
+    1er commit
+
+commit 420884774a1a4de5bec93e5bf4a3f85c378fcfd9
+Author: Johncour <courpronjonathan@googlemail.com>
+Date:   Wed Mar 23 11:38:23 2022 +0100
+
+    Add initial set of files
+
+John@LAPTOP-VF52JB84 MINGW64 /c/xampp/htdocs/my_sbd (main)
+$ git reset HEAD~1 --hard
+HEAD is now at 2da4ba5 1er commit
+
+John@LAPTOP-VF52JB84 MINGW64 /c/xampp/htdocs/my_sbd (main)
+$ git status
+On branch main
+nothing to commit, working tree clean
+
+John@LAPTOP-VF52JB84 MINGW64 /c/xampp/htdocs/my_sbd (main)
+$ git log
+commit 2da4ba5a399982a93b8c38da93a8020fc5366946 (HEAD -> main)
+Author: Johncour <courpronjonathan@googlemail.com>
+Date:   Fri Apr 1 11:49:39 2022 +0200
+
+    1er commit
+
+commit 420884774a1a4de5bec93e5bf4a3f85c378fcfd9
+Author: Johncour <courpronjonathan@googlemail.com>
+Date:   Wed Mar 23 11:38:23 2022 +0100
+
+    Add initial set of files
 
 
 

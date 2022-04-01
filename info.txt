@@ -5,7 +5,7 @@ php -S localhost:8000 -t public
 
 symfony console make:controller
 
-symfony console doctrine:database:create
+symfony console doctrine:database:create"
 
 // Permet de créer une classe Entity qui représente une table de la bdd
 symfony console make:entity
@@ -37,6 +37,23 @@ make:registration-form  // pour créer un formulaire d'inscription
 
 // pour ne pas avoir à lancer la commande à chaque modification d'un fichier js ou css
 yarn encore dev --watch ( ⚠ le terminal n'est plus accessible)
+
+git reset HEAD~1 // annule 1 commit après le commit actuel
+git reset HEAD~1 --hard // l'option hard remet les fichiers dans leur état initial ⚠ toutes les modifications sont perdues
+git reset HEAD~1 --soft
+
+git checkout nom-branche  // basculer sur une autre branche
+git checkout -b nouvelle-branche  // crée une nouvelle branche et bascule sur cette branche
+
+main  ----------o---------o----3------4       5------
+develop                    \-------1------2--/
+
+main  ----------o---------o----3---1---4--2---5------
+develop                    \-----1------2--/
+
+git branch 
+   develop
+ * main
 
         /* On ne PEUT PAS instancier d'objets d'une classe Repository 
             on doit les passer dans les arguments d'une méthode d'un contrôleur 
